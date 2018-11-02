@@ -1,0 +1,17 @@
+{
+  "name": "module_3_and_4_client_server_mvc_jostein",
+  "version": "1.0.0",
+  "description": "Mandatory assignement 3 Josteins class MM-200, Clientside",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Otto André Haaland",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.2",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "pg": "^7.6.0"
+  }
+}
