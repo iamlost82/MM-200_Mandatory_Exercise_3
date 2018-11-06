@@ -9,7 +9,98 @@
     <title>Mandatory Exercise 3, MVC, Task 1</title>
 </head>
 <body>
+    <header>
+        <h1 id="headerTxt">Task 2A</h1>
+    </header>
+    <nav>
+        <button type="button" id="showTask2ABtn">Task 2 A</button>
+        <button type="button" id="showTask2BBtn">Task 2 B</button>
+        <button type="button" id="showTask2CBtn">Task 2 C</button>
+    </nav>
+    <main id="content">
+    </main>
+        <template id="task2cTemp">
+            <fieldset><legend>Task 2C:</legend>
+                Explain how we can display (old) data if there is no internet connection,<br>
+                or the server respond with a status code other than 200.
+            </fieldset>
+            <br>
+            <h2>Answer:</h2>
+            <p>You can first have an empty page that displays static information before you get a response 200 from the server.</p>
+            <p>Once you have had your first load from the server, you could pput that inormation in localStorage, and then retrieve that data on any other status code than "200"</p>
+        </template>
+
+        <template id="task2bTemp">
+            <fieldset><legend>Task 2B:</legend>
+                Explain how we can retrieve the status code sent from the server? <br>
+                E.g. status code 200 indicates that the response is OK.
+            </fieldset>
+            <br>
+            <h2>Answer:</h2>
+            <p>The status code can be retrieved by using:</p>
+<pre><strong>
+    let myResponseStatus = response.status;
+</strong></pre><br>
+            <p>inside the "try"</p><br>
+            <br>
+<fieldset>
+    <legend>Example:</legend>
+<pre>
+loadData();
+    async function loadData() {
+    let url = "http://sukkergris.no/choco/jsonlist/";
+    try {
+        let response = await fetch(url);
+        <strong>let myResponseStatus = response.status;</strong>
+        let data = await response.json();
+        console.log(data);
+    } catch(error) {
+        console.log(error);
+    }
+}
+</pre>
+            </fieldset>
+        </template>
+
+        <template id="task2aTemp">
+        <fieldset>
+            <legend>Task 2A:</legend>
+<pre>
+Read the code below and explain (short) what the code does. Also, explain (short) the
+following elements in the code: fetch, response, json(), data, async, await and try, catch.
+
+loadData();
+    async function loadData() {
+    let url = "http://sukkergris.no/choco/jsonlist/";
+    try {
+        let response = await fetch(url);
+        let data = await response.json();
+        console.log(data);
+    } catch(error) {
+        console.log(error);
+    }
+}
+</pre>
+        </fieldset>
+        <h2>Answer:</h2>
+        <p>The code above retrieves a list of chocolates from the server.<br>
+        The code is set as an asyncronous function, and the function is run.</p>
+        <br>
+        <ul>
+            <li>fetch - sends a request to the url, and gets back a response</li>
+            <li>response - variable that now contains the response from the fetch command</li>
+            <li>json() - turns the response into json so we can work with it</li>
+            <li>data - variable that now contains json data from the fetch command</li>
+            <li>async - Runs the function asynchronously</li>
+            <li>await - Waits until action is complete before running next line of code</li>
+            <li>try - Together with catch this gives you better error handling</li>
+            <li>catch - If above actions fail, and error will be returned</li>
+        </ul>
+    </template>
+
     
+    <footer>MM-200, Mandatory Excercise 3</footer>
+
 </body>
 <script src="js/ctr_main.js"></script>
 </html>
