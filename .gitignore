@@ -1,3 +1,6 @@
+/helper_files
 /node_modules
+/public
 package-lock.json
 .env
+.vscode

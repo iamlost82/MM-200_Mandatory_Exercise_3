@@ -1,0 +1,11 @@
+*{
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    margin: 0px;
+}
+body{
+    margin-left: auto;
+    margin-right: auto;
+    height: 100vh;
+    max-width: 900px;
+}
