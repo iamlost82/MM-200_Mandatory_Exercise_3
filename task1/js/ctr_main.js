@@ -1,5 +1,14 @@
+let headerTxt = document.querySelector('#headerTxt');
 (function(){
-    displayTask1b();
+    let task1aBtn = document.querySelector('#showTask1ABtn');
+    let task1bBtn = document.querySelector('#showTask1BBtn');
+    if(sessionStorage.getItem('activePage')){
+        eval(sessionStorage.getItem('activePage'));
+    } else{
+        displayTask1a();
+    }
+    task1aBtn.addEventListener('click',displayTask1a);
+    task1bBtn.addEventListener('click',displayTask1b);
 })();
 //Render template elements
 function addTemplateElementToPage(element){
@@ -21,14 +30,17 @@ function displayTask1a(){
     clearScreen();
     addTemplateElementToPage(pageContent);
     task1aController();
+    headerTxt.innerHTML = 'Task 1A';
+    sessionStorage.setItem('activePage','displayTask1a()');
 }
 
 function displayTask1b(){
     let pageContent = createElementFromTemplate('#task1bTemp');
     clearScreen();
-
     addTemplateElementToPage(pageContent);
     task1bController();
+    headerTxt.innerHTML = 'Task 1B';
+    sessionStorage.setItem('activePage','displayTask1b()');
 }
 
 function task1aController(){
@@ -42,6 +54,7 @@ function task1aController(){
             let div = document.createElement("div");
             let btn1 = document.createElement("button");
             let btn2 = document.createElement("button");
+            div.className = "carDiv";
             btn1.innerHTML = "Edit";
             btn2.innerHTML = "Delete";
             div.innerHTML = cars[i];
@@ -115,6 +128,7 @@ function task1bController(){
         for (i in cars) {
             let div = document.createElement("div");
             let btn1 = document.createElement("button");
+            div.className = "carDiv";
             btn1.innerHTML = "Edit";
             div.innerHTML = cars[i];
             div.draggable = true;

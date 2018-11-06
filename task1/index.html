@@ -9,21 +9,34 @@
     <title>Mandatory Exercise 3, MVC, Task 1</title>
 </head>
 <body>
-    <div id="content"></div>
+    <header>
+        <h1 id="headerTxt">Task 1A</h1>
+    </header>
+    <nav>
+        <button type="button" id="showTask1ABtn">Task 1 A</button>
+        <button type="button" id="showTask1BBtn">Task 1 B</button>
+    </nav>
+    <main id="content"></main>
+    <footer>MM-200, Mandatory Excercise 3</footer>
     
     <template id="task1aTemp">
-        <h1>Task 1 A:</h1>
+        <div class="task1aInputDiv">
+            <input id="carInput" type="text" placeholder="Enter new car name">
+            <button type="button" id="saveCarBtn" value="new">Add/Save car</button>
+        </div>
         <div id="task1aContainer"></div>
-        <input id="carInput" type="text" placeholder="Enter car name">
-        <button type="button" id="saveCarBtn" value="new">Save car</button>
     </template>
 
     <template id="task1bTemp">
-        <h1>Task 1B:</h1>
+        <div class="task1bInputDiv">
+            <input id="carInput2" type="text" placeholder="Enter new car name">
+            <button type="button" id="saveCarBtn2" value="new">Save car</button>
+        </div>
         <div id="task1bContainer"></div>
-        <input id="carInput2" type="text" placeholder="Enter car name">
-        <button type="button" id="saveCarBtn2" value="new">Save car</button>
-        <img id="trashcanImg" src="graphic/trashcan.png" alt="Trashcan" width="100px">
+        <div id="task1bTrashCanDiv">
+            <img id="trashcanImg" src="graphic/trashcan.png" alt="Trashcan" width="100px">
+            <p>Drag and drop list item here to delete</p>
+        </div>
     </template>
 </body>
 <script src="js/ctr_main.js"></script>
