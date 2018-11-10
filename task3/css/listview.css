@@ -1,0 +1,27 @@
+.chocDivList{
+    display: block;
+    border-bottom: 2px solid #000000;
+    margin: 5px;
+    background-color: #2f8ada;
+    height: 150px;
+    overflow: hidden;
+}
+.highlightedList{
+    background-color: #18446b;
+}
+.chocTitleList{
+    padding: 5px;
+}
+.chocImgList{
+    margin: 0px;
+    padding: 0px;
+    padding-right: 10px;
+    float: left;
+    height: 100%;
+}
+.chocInfoList{
+    padding: 5px;
+}
+.chocPriceList{
+    font-weight: bold;
+}

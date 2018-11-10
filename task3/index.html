@@ -5,11 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="css/task3.css">
+    <link rel="stylesheet" type="text/css" href="css/listview.css">
+    <link rel="stylesheet" type="text/css" href="css/gridview.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>Mandatory Exercise 3, MVC, Task 1</title>
 </head>
 <body>
-    
+        <header>
+            <h1 id="headerTxt">Task 3A</h1>
+        </header>
+        <nav>
+            <button type="button" id="showTask3ABtn">Task 3 A</button>
+            <button type="button" id="showTask3BBtn">Task 3 B</button>
+            <button type="button" id="showTask3CBtn">Task 3 C</button>
+            <button type="button" id="showTask3DBtn">Task 3 D</button>
+            <button type="button" id="showTask3EBtn">Task 3 E</button>
+        </nav>
+        <main id="content">
+        </main>
+
+        <template id="task3bTemp">
+                    <fieldset>
+                        <legend>Task 3B:</legend>
+                        In Task 3 a), we have both a controller and a view. What can be regarded as the model?
+                    </fieldset>
+                    <br>
+                    <h2>Answer:</h2>
+                    <p>The model is the API we contact to get the savoury information.</p>
+        </template>
+            <footer>MM-200, Mandatory Excercise 3</footer>   
 </body>
 <script src="js/ctr_main.js"></script>
+<script src="js/listview.js"></script>
+<script src="js/gridview.js"></script>
+<script>
+let headerTxt = document.querySelector('#headerTxt');
+(function(){
+    let task3aBtn = document.querySelector('#showTask3ABtn');
+    let task3bBtn = document.querySelector('#showTask3BBtn');
+    let task3cBtn = document.querySelector('#showTask3CBtn');
+    let task3dBtn = document.querySelector('#showTask3DBtn');
+    let task3eBtn = document.querySelector('#showTask3EBtn');
+    if(sessionStorage.getItem('activePage')){
+        eval(sessionStorage.getItem('activePage'));
+    } else{
+        displayTask3a();
+    }
+    task3aBtn.addEventListener('click',displayTask3a);
+    task3bBtn.addEventListener('click',displayTask3b);
+    task3cBtn.addEventListener('click',displayTask3c);
+    task3dBtn.addEventListener('click',displayTask3d);
+    task3eBtn.addEventListener('click',displayTask3e);
+})();
+//Render template elements
+function addTemplateElementToPage(element){
+    document.getElementById('content').appendChild(element);
+}
+function clearScreen(){
+    document.getElementById('content').innerHTML = "";
+}
+function createElementFromTemplate(templateID){
+    let template = document.querySelector(templateID);
+    let clone = document.importNode(template.content, true);
+    return clone;
+}
+
+function displayTask3a(){
+    clearScreen();
+    headerTxt.innerHTML = 'Task 3A';
+    sessionStorage.setItem('activePage','displayTask3a()');
+    loadData();
+}
+
+function displayTask3b(){
+    let pageContent = createElementFromTemplate('#task3bTemp');
+    clearScreen();
+    addTemplateElementToPage(pageContent);
+    headerTxt.innerHTML = 'Task 3B';
+    sessionStorage.setItem('activePage','displayTask3b()');
+}
+
+function displayTask3c(){
+    clearScreen();
+    headerTxt.innerHTML = 'Task 3C';
+    sessionStorage.setItem('activePage','displayTask3c()');
+    loadDataExt();
+}
+
+function displayTask3d(){
+    clearScreen();
+    headerTxt.innerHTML = 'Task 3D';
+    sessionStorage.setItem('activePage','displayTask3d()');
+    loadDataExt();
+    myContent = document.querySelector('#content');
+    document.addEventListener('choco_select',function(evt){
+        console.log(evt.value);
+    });
+}
+
+function displayTask3e(){
+    clearScreen();
+    headerTxt.innerHTML = 'Task 3E';
+    sessionStorage.setItem('activePage','displayTask3e()');
+    loadDataGrid();
+    myContent = document.querySelector('#content');
+    document.addEventListener('choco_select',function(evt){
+        console.log(evt.value);
+    });
+}
+
+async function loadData() {
+    let url = "http://sukkergris.no/choco/jsonlist/";
+    let contentArea = document.querySelector('#content');
+    try {
+        let response = await fetch(url);
+        let data = await response.json();
+        let view = createListView(data);
+        contentArea.appendChild(view);
+    } catch (error) {
+        console.log(error);
+    }
+}
+async function loadDataExt() {
+    let url = "http://sukkergris.no/choco/jsonlist/";
+    let contentArea = document.querySelector('#content');
+    try {
+        let response = await fetch(url);
+        let data = await response.json();
+        let view = createListViewExt(data);
+        contentArea.appendChild(view);
+    } catch (error) {
+        console.log(error);
+    }
+}
+async function loadDataGrid(){
+    let url = "http://sukkergris.no/choco/jsonlist/";
+    let contentArea = document.querySelector('#content');
+    try {
+        let response = await fetch(url);
+        let data = await response.json();
+        let view = createGridView(data);
+        contentArea.appendChild(view);
+    } catch (error) {
+        console.log(error);
+    }    
+}
+</script>
 </html>
