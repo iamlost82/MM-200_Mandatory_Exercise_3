@@ -36,8 +36,9 @@ nav{
     display: block;
     background-color: #000000;
 }
-nav button:not(:first-child) {
-	display:none;
+nav .nav-item {
+    display:block;
+    width: 100%;
     height: 100%;
     margin: 0px;
 	-moz-box-shadow:inset 0px 0px 0px 0px #16395c;
@@ -53,28 +54,8 @@ nav button:not(:first-child) {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #0b2647;
 }
-.navVis{
-    height: 100%;
-    margin: 0px;
-	-moz-box-shadow:inset 0px 0px 0px 0px #16395c;
-	-webkit-box-shadow:inset 0px 0px 0px 0px #16395c;
-	box-shadow:inset 0px 0px 0px 0px #16395c;
-	background-color:#074b70;
-	border:1px solid #000000;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:1.2em;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #0b2647;
-}
-
-nav button i{
-    float: right;
-    color: #eeeeee;
-    display: block;
+.dropdown-hidden{
+    display: none;
 }
 /*
 nav{

@@ -13,21 +13,19 @@
     <header>
             <h1 id="headerTxt">BLOGFOG</h1>
     </header>
-    <nav>
-            <button type="button" id="expandMenu" class="navVis">
-                    <i class="fa fa-bars"></i>
-            </button>
-            <button type="button" id="showTask3ABtn">Home</button>
-            <button type="button" id="showTask3ABtn">New Post</button>
-            <button type="button" id="showTask3ABtn">List Posts</button>
-            <button type="button" id="showTask3ABtn">List Users</button>
+    <nav id="navbar">
+            <button type="button" id="expandMenu" class="nav-item">MENU</button>
+            <div id="menuItems" class="dropdown-hidden">
+                <button type="button" id="menuHomeBtn" class="nav-item">Home</button>
+                <button type="button" id="menuNewPostBtn" class="nav-item">New Post</button>
+            </div>
 
     </nav>
     <main id="content">
     </main>
     <footer>Max 33 chars</footer>
 
-    <template id="loginTemp">
+    <template id="loginUserTemp">
         <fieldset id="user">
             <legend>Log in:</legend>
             <label for="loginUserNameInp">Username:</label>
@@ -55,7 +53,7 @@
         </fieldset>
     </template>
     
-    <template id="showUsersTemp">
+    <template id="listAllUsersTemp">
         <div>
             <img src="graphic/tmp_user.png" alt="Temporary user picture">
             <h2>Name: Otto André Haaland</h2>
@@ -68,6 +66,19 @@
         </div>
     </template>
     
+    <template id="showSingleUserTemp">
+        <div>
+            <img src="graphic/tmp_user.png" alt="Temporary user picture">
+            <h2>Name: Otto André Haaland</h2>
+            <p>Alias: kehwha</p>
+        </div>
+        <div>
+            <img src="graphic/tmp_user.png" alt="Temporary user picture">
+            <h2>Name: Liv Kristine Steffensen Haaland</h2>
+            <p>Alias: kepasa</p>
+        </div>
+    </template>
+
     <template id="createBlogPostTemp">
         <fieldset>
             <legend>New Post:</legend>
@@ -81,7 +92,7 @@
         </fieldset>
     </template>
     
-    <template id="showBlogPostsTemp">
+    <template id="listAllBlogPostsTemp">
         <div>
             <h2>My fancy blogtitle</h2>
             <img src="graphic/tmp_user.png" alt="user image">
@@ -97,8 +108,33 @@
             <p>Created 11/11-18 01:16</p>
         </div>
     </template>
-
+    
+    <template id="showSingleBlogPostTemp">
+        <div>
+            <h2>My fancy blogtitle</h2>
+            <img src="graphic/tmp_user.png" alt="user image">
+            <p>Created by: Otto André Haaland</p>
+            <img src="graphic/tmp_blog.png" alt="blog image">
+            <p>Created 11/11-18 01:16</p>
+        </div>
+        <div>
+            <h2>My fancy blogtitle</h2>
+            <img src="graphic/tmp_user.png" alt="user image">
+            <p>Created by: Liv Kristine Steffensen Haaland</p>
+            <img src="graphic/tmp_blog.png" alt="blog image">
+            <p>Created 11/11-18 01:16</p>
+        </div>
+    </template>
 </body>
 <script src="js/controller/ctr_main.js"></script>
-<script src="js/views/view_login.js"></script>
+<script src="js/controller/ctr_navigation.js"></script>
+<script src="js/controller/ctr_loginUser.js"></script>
+<script src="js/controller/ctr_createUser.js"></script>
+<script src="js/views/view_loginUser.js"></script>
+<script src="js/views/view_createUser.js"></script>
+<script src="js/views/view_listAllUsers.js"></script>
+<script src="js/views/view_showSingleUser.js"></script>
+<script src="js/views/view_createBlogPost.js"></script>
+<script src="js/views/view_showSingleBlogPost.js"></script>
+<script src="js/views/view_listAllBlogPosts.js"></script>
 </html>
