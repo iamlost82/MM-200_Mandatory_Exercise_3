@@ -4,27 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/task4.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <title>Mandatory Exercise 3, MVC, Task 4</title>
 </head>
 <body>
-    <div id="content"></div>
+    <header>
+            <h1 id="headerTxt">BLOGFOG</h1>
+    </header>
+    <nav>
+            <button type="button" id="expandMenu" class="navVis">
+                    <i class="fa fa-bars"></i>
+            </button>
+            <button type="button" id="showTask3ABtn">Home</button>
+            <button type="button" id="showTask3ABtn">New Post</button>
+            <button type="button" id="showTask3ABtn">List Posts</button>
+            <button type="button" id="showTask3ABtn">List Users</button>
+
+    </nav>
+    <main id="content">
+    </main>
+    <footer>Max 33 chars</footer>
 
     <template id="loginTemp">
-        <fieldset>
+        <fieldset id="user">
             <legend>Log in:</legend>
             <label for="loginUserNameInp">Username:</label>
             <input id="loginUserNameInp" type="text">
             <label for="loginPasswordInp">Password:</label>
             <input id="loginPasswordInp" type="password">
             <button type="button" id="loginBtn">Log in</button>
-            <p>Not a user? Click here to create one.</p>
+            <p id="newUserLink">Not a user? Click here to create one.</p>
         </fieldset>
     </template>
     
     <template id="createUserTemp">
-        <fieldset>
+        <fieldset id="user">
             <legend>Create user:</legend>
             <label for="createUserNameInp">Username:</label>
             <input id="createUserNameInp" type="text">
@@ -35,22 +51,54 @@
             <label for="createAvatar">Avatar:</label>
             <input id="createAvatar" type="file">
             <button type="button" id="createUserBtn">Create user</button>
-            <p>Already a user? Click here to log in.</p>
+            <p id="backToLoginLink">Already a user? Click here to log in.</p>
         </fieldset>
     </template>
     
     <template id="showUsersTemp">
-
+        <div>
+            <img src="graphic/tmp_user.png" alt="Temporary user picture">
+            <h2>Name: Otto André Haaland</h2>
+            <p>Alias: kehwha</p>
+        </div>
+        <div>
+            <img src="graphic/tmp_user.png" alt="Temporary user picture">
+            <h2>Name: Liv Kristine Steffensen Haaland</h2>
+            <p>Alias: kepasa</p>
+        </div>
     </template>
     
     <template id="createBlogPostTemp">
-
+        <fieldset>
+            <legend>New Post:</legend>
+            <label for="blogTitleInp">Title:</label>
+            <input id="blogTitleInp" type="text">
+            <label for="blogPostInp">Story:</label>
+            <textarea id="blogPostInp" type="text" rows="5"></textarea>
+            <label for="blogPostImg">Image:</label>
+            <input id="blogPostImg" type="file">
+            <button type="button" id="blogPostCreateBtn">Create New Post</button>
+        </fieldset>
     </template>
     
     <template id="showBlogPostsTemp">
-
+        <div>
+            <h2>My fancy blogtitle</h2>
+            <img src="graphic/tmp_user.png" alt="user image">
+            <p>Created by: Otto André Haaland</p>
+            <img src="graphic/tmp_blog.png" alt="blog image">
+            <p>Created 11/11-18 01:16</p>
+        </div>
+        <div>
+            <h2>My fancy blogtitle</h2>
+            <img src="graphic/tmp_user.png" alt="user image">
+            <p>Created by: Liv Kristine Steffensen Haaland</p>
+            <img src="graphic/tmp_blog.png" alt="blog image">
+            <p>Created 11/11-18 01:16</p>
+        </div>
     </template>
 
 </body>
-<script src="js/ctr_main.js"></script>
+<script src="js/controller/ctr_main.js"></script>
+<script src="js/views/view_login.js"></script>
 </html>
