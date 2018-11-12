@@ -47,7 +47,7 @@ task4Ctr.ctr_createUser = function(){
         let username = document.querySelector('#createUserNameInp').value;
         let password = document.querySelector('#createPasswordInp').value;
         let fullname = document.querySelector('#createFullNameInp').value;
-        let avatar = document.querySelector('#createAvatar').value;
+        let avatar = document.querySelector('#createAvatar').files[0];
         if(username.length > 1 && password.length > 1 && fullname.length > 1){
             let fdata = new FormData();
             fdata.append('avatar', avatar);

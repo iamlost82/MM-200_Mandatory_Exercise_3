@@ -17,6 +17,7 @@ task4Ctr.ctr_navigation = function(){
         menuItemsDiv.classList.toggle('dropdown-hidden');
     }
     function navigateToPage(lastVisitedPage){
+        task4Ctr.generateSlogan();
         switch(lastVisitedPage){
             case 'expandMenu':
                 toggleDropDownMenu();

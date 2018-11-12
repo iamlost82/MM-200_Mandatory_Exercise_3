@@ -9,7 +9,7 @@ task4Ctr.ctr_listAllBlogPosts = async function(){
             data = await data.reverse();
             let lastposts = data.splice((data.length-5),data.length);
             localStorage.setItem('listLastBlogPosts', JSON.stringify(lastposts));
-            outputBlogPostListToView(data);
+            await outputBlogPostListToView(data);
         } else{
             data = fetchAlternateData();
             outputBlogPostListToView(data);
@@ -50,7 +50,7 @@ task4Ctr.ctr_showSingleBlogPost = async function(){
 task4Ctr.ctr_createBlogPost = function(){
     document.querySelector('#blogPostCreateBtn').addEventListener('click', async function(){
         let title = document.querySelector('#blogTitleInp').value;
-        let image = document.querySelector('#blogPostImg').value;
+        let image = document.querySelector('#blogPostImg').files[0];
         let blogpost = document.querySelector('#blogPostInp').value;
         let token = localStorage.getItem('token');
 

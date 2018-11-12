@@ -186,6 +186,7 @@ footer{
 	text-decoration:none;
 	text-shadow:0px 1px 0px #0b2647;
 }
+
 @media only screen and (min-width: 650px) {
     #blogListDiv{
         display: grid;
