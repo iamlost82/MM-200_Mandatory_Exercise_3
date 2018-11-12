@@ -186,3 +186,19 @@ footer{
 	text-decoration:none;
 	text-shadow:0px 1px 0px #0b2647;
 }
+@media only screen and (min-width: 650px) {
+    #blogListDiv{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        cursor: pointer;
+    }
+    #blogListDiv .blogPost{
+        position: relative;
+        background-color: #b8d8f1;
+        margin:10px;
+    }
+}

@@ -53,7 +53,6 @@ task4Ctr.ctr_createBlogPost = function(){
         let image = document.querySelector('#blogPostImg').value;
         let blogpost = document.querySelector('#blogPostInp').value;
         let token = localStorage.getItem('token');
-        console.log(image);
 
         if(title.length > 1 && blogpost.length > 1){
             let fdata = new FormData();
