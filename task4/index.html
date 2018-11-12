@@ -16,11 +16,13 @@
     <nav id="navbar">
             <button type="button" id="expandMenu" class="nav-item">MENU</button>
             <div id="menuItems" class="dropdown-hidden">
-                <button type="button" id="menuHomeBtn" class="nav-item">Home</button>
-                <button type="button" id="menuNewPostBtn" class="nav-item">New Post</button>
+                <button type="button" id="listAllBlogPosts" class="nav-item">Home/View all posts</button>
+                <button type="button" id="listAllUsers" class="nav-item">View all users</button>
+                <button type="button" id="createBlogPost" class="nav-item">New Post</button>
             </div>
 
     </nav>
+    <div id="offlineDiv"></div>
     <main id="content">
     </main>
     <footer>Max 33 chars</footer>
@@ -54,16 +56,7 @@
     </template>
     
     <template id="listAllUsersTemp">
-        <div>
-            <img src="graphic/tmp_user.png" alt="Temporary user picture">
-            <h2>Name: Otto André Haaland</h2>
-            <p>Alias: kehwha</p>
-        </div>
-        <div>
-            <img src="graphic/tmp_user.png" alt="Temporary user picture">
-            <h2>Name: Liv Kristine Steffensen Haaland</h2>
-            <p>Alias: kepasa</p>
-        </div>
+        <div id="userListDiv"></div>
     </template>
     
     <template id="showSingleUserTemp">
@@ -80,7 +73,7 @@
     </template>
 
     <template id="createBlogPostTemp">
-        <fieldset>
+        <fieldset id="newBlogPost">
             <legend>New Post:</legend>
             <label for="blogTitleInp">Title:</label>
             <input id="blogTitleInp" type="text">
@@ -93,43 +86,17 @@
     </template>
     
     <template id="listAllBlogPostsTemp">
-        <div>
-            <h2>My fancy blogtitle</h2>
-            <img src="graphic/tmp_user.png" alt="user image">
-            <p>Created by: Otto André Haaland</p>
-            <img src="graphic/tmp_blog.png" alt="blog image">
-            <p>Created 11/11-18 01:16</p>
-        </div>
-        <div>
-            <h2>My fancy blogtitle</h2>
-            <img src="graphic/tmp_user.png" alt="user image">
-            <p>Created by: Liv Kristine Steffensen Haaland</p>
-            <img src="graphic/tmp_blog.png" alt="blog image">
-            <p>Created 11/11-18 01:16</p>
-        </div>
+        <div id="blogListDiv"></div>
     </template>
-    
+
     <template id="showSingleBlogPostTemp">
-        <div>
-            <h2>My fancy blogtitle</h2>
-            <img src="graphic/tmp_user.png" alt="user image">
-            <p>Created by: Otto André Haaland</p>
-            <img src="graphic/tmp_blog.png" alt="blog image">
-            <p>Created 11/11-18 01:16</p>
-        </div>
-        <div>
-            <h2>My fancy blogtitle</h2>
-            <img src="graphic/tmp_user.png" alt="user image">
-            <p>Created by: Liv Kristine Steffensen Haaland</p>
-            <img src="graphic/tmp_blog.png" alt="blog image">
-            <p>Created 11/11-18 01:16</p>
-        </div>
+        <div id="blogListDiv"></div>
     </template>
 </body>
 <script src="js/controller/ctr_main.js"></script>
 <script src="js/controller/ctr_navigation.js"></script>
-<script src="js/controller/ctr_loginUser.js"></script>
-<script src="js/controller/ctr_createUser.js"></script>
+<script src="js/controller/ctr_user.js"></script>
+<script src="js/controller/ctr_blog.js"></script>
 <script src="js/views/view_loginUser.js"></script>
 <script src="js/views/view_createUser.js"></script>
 <script src="js/views/view_listAllUsers.js"></script>
